@@ -1,26 +1,65 @@
-@import "tailwindcss";
+@import 'tailwindcss';
+
+* {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+input,
+button,
+textarea,
+select {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  --background: #2c2449;
+  --foreground: #fff;
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
+}
+
+.services-slider .slick-track {
+  display: flex !important;
+  align-items: stretch;
+  gap: 1rem;
+}
+
+.services-slider .slick-slide {
+  height: inherit !important;
+  > div {
+    height: 100%;
+  }
+}
+
+.services-slider .slick-arrow {
+  width: 40px;
+  height: 40px;
+  background-color: #be232d !important;
+  border-radius: 50%;
+  z-index: 10;
+  display: flex !important;
+  align-items: center;
+  justify-content: center;
+}
+
+.services-slider .slick-arrow:hover {
+  background-color: #9c1c24 !important;
+}
+
+.services-slider .slick-dots li.slick-active div {
+  background-color: #9c1c24;
+  transform: scale(1.2);
+}
+
+.services-slider .slick-dots {
+  position: static !important;
+  margin-top: 2rem !important;
+  padding-top: 1rem !important;
 }
